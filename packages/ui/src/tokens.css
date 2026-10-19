@@ -1,0 +1,30 @@
+:root {
+  --vyom-ink: #1a1210;
+  --vyom-ink-soft: #5c4a3f;
+  --vyom-paper: #faf7f2;
+  --vyom-panel: #ffffff;
+  --vyom-line: #e8ddd0;
+  --vyom-teal: #d97706;
+  --vyom-teal-deep: #b45309;
+  --vyom-mint: #fde68a;
+  --vyom-amber: #ea580c;
+  --vyom-profit: #3f7a52;
+  --vyom-loss: #c2410c;
+  --vyom-coral: #e11d48;
+  --vyom-sky: #2563eb;
+  --vyom-shadow: 0 22px 60px rgba(26, 18, 16, 0.1);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Sora", "Segoe UI", sans-serif;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+}

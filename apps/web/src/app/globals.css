@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@import "@vyomai/ui/tokens.css";
+
+@theme inline {
+  --color-ink: var(--vyom-ink);
+  --color-ink-soft: var(--vyom-ink-soft);
+  --color-paper: var(--vyom-paper);
+  --color-panel: var(--vyom-panel);
+  --color-line: var(--vyom-line);
+  --color-teal: var(--vyom-teal);
+  --color-teal-deep: var(--vyom-teal-deep);
+  --color-mint: var(--vyom-mint);
+  --color-amber: var(--vyom-amber);
+  --color-profit: var(--vyom-profit);
+  --color-loss: var(--vyom-loss);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--vyom-ink);
+  background:
+    radial-gradient(1000px 520px at 8% -8%, rgba(217, 119, 6, 0.14), transparent 55%),
+    radial-gradient(900px 480px at 100% 0%, rgba(225, 29, 72, 0.07), transparent 48%),
+    linear-gradient(180deg, #fff9f2 0%, var(--vyom-paper) 40%, #f3ebe1 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.vyom-panel {
+  background: color-mix(in srgb, var(--vyom-panel) 92%, white);
+  border: 1px solid color-mix(in srgb, var(--vyom-line) 80%, transparent);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--vyom-shadow);
+}
+
+.vyom-input {
+  width: 100%;
+  border: 1px solid var(--vyom-line);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  color: var(--vyom-ink);
+}
+
+.vyom-input:focus {
+  outline: 2px solid color-mix(in srgb, var(--vyom-teal) 35%, transparent);
+  border-color: var(--vyom-teal);
+}
+
+.vyom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, opacity 160ms ease;
+}
+
+.vyom-btn:hover {
+  transform: translateY(-1px);
+}
+
+.vyom-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.vyom-btn-primary {
+  background: var(--vyom-teal);
+  color: white;
+}
+
+.vyom-btn-primary:hover {
+  background: var(--vyom-teal-deep);
+}
+
+.vyom-btn-ghost {
+  background: transparent;
+  color: var(--vyom-ink-soft);
+  border: 1px solid var(--vyom-line);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 480ms ease both;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.4s ease-in-out infinite;
+}
+
+@keyframes growth-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.growth-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  pathLength: 1;
+  animation: growth-draw 1.6s ease forwards;
+}
+
+.spark-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  pathLength: 1;
+  animation: growth-draw 1.1s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-pulse-soft,
+  .growth-path,
+  .spark-draw {
+    animation: none !important;
+  }
+
+  .growth-path,
+  .spark-draw {
+    stroke-dashoffset: 0;
+  }
+
+  .method-step {
+    transition: none !important;
+  }
+}
